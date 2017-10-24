@@ -3,27 +3,17 @@ using Google.Apis.Gmail.v1;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace testApp
 {
     public sealed partial class MainPage : Page
     {
         int index = 1;
-        public List<UserCredential> Credentials { get; } = new List<UserCredential>();
+        public List<UserCredential> Credentials { get; set; } = new List<UserCredential>();
 
         public MainPage()
         {

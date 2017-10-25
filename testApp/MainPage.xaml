@@ -14,11 +14,48 @@
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0"
                  x:Name="list"
-                 ItemsSource="{Binding}"
                  Margin="10">
             <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Token.AccessToken}"/>
+                <DataTemplate x:DataType="local:User">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Ellipse Grid.Column="0"
+                                     Margin="0 4 20 4"
+                                     Width="30" 
+                                     Height="30"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding Image}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" 
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="5"
+                                       Text="{Binding Id}"/>
+                            <TextBlock Grid.Row="1" 
+                                       Margin="5"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Text="{Binding Email}"/>
+                            <TextBlock Grid.Row="2" 
+                                       Margin="5"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Text="{Binding Name}"/>
+                        </Grid>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
